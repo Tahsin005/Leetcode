@@ -17,27 +17,27 @@ https://leetcode.com/problems/merge-nodes-in-between-zeros/?envType=daily-questi
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
-public:
-    ListNode* mergeNodes(ListNode* head) {
-        head = head->next;
+// class Solution {
+// public:
+//     ListNode* mergeNodes(ListNode* head) {
+//         head = head->next;
 
-        ListNode* start = head;
-        while (start) {
-            ListNode* end = start;
-            int sum = 0;
-            while (end->val != 0) {
-                sum += end-> val;
-                end = end->next;
-            }
-            start-> val = sum;
-            start->next = end->next;
-            start = start->next;
-        }
+//         ListNode* start = head;
+//         while (start) {
+//             ListNode* end = start;
+//             int sum = 0;
+//             while (end->val != 0) {
+//                 sum += end-> val;
+//                 end = end->next;
+//             }
+//             start-> val = sum;
+//             start->next = end->next;
+//             start = start->next;
+//         }
 
-        return head;
-    }
-};
+//         return head;
+//     }
+// };
 int main(){
     
     
