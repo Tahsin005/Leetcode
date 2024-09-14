@@ -10,10 +10,26 @@ int solve(int ind, vector<int> &height, vector<int> &dp) {
 
     return dp[ind] = min(jumpOne, jumpTwo);
 }
-int frogJump(int n, vector<int> &height) {
-    // Write your code here.
-    vector<int> dp(n, -1);
-    return solve(n - 1, height, dp);
+int frogJump(int n, vector<int> &heights) {
+    // Memoization
+    // vector<int> dp(n, -1);
+    // return solve(n - 1, heights, dp);
+
+
+    // Tabulation
+    vector<int> dp(n, 0);
+    dp[0] = 0;
+
+    for (int i = 1; i < n; i++) {
+        int jumpOne = dp[i - 1] + abs(heights[i] - heights[i - 1]);
+        int jumpTwo = INT_MAX;
+        if (i > 1) {
+            jumpTwo = dp[i - 2] + abs(heights[i] - heights[i - 2]);
+        }
+        dp[i] = min(jumpOne, jumpTwo);
+    }
+
+    return dp[n - 1];
 }
 
 /*
