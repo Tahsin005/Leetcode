@@ -1,12 +1,5 @@
-#include<bits/stdc++.h>
-#define ll long long
+#include <bits/stdc++.h> 
 using namespace std;
-/*
-        
-        
-https://www.naukri.com/code360/problems/maximum-sum-of-non-adjacent-elements_843261?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
-        
-*/          
 int solution(int idx, vector<int> &arr, vector<int> &dp) {
     if (dp[idx] != -1) {
         return dp[idx];
@@ -28,10 +21,23 @@ int maximumNonAdjacentSum(vector<int> &nums){
     // Write your code here.
     int n = nums.size();
 
-    return solve(n, nums);
+    // return solve(n, nums);
+    vector<int> dp(n, 0);
+
+    dp[0] = nums[0];
+    int neg = 0;
+
+    for (int i = 1; i < n; i++) {
+        int take = nums[i];
+        if (i > 1) take += dp[i - 2];
+        int notTake = 0 + dp[i - 1];
+
+        dp[i] = max(take, notTake);
+    }
+
+    return dp[n - 1];
 }
+
 int main(){
     
-    
-    return 0;
 }
