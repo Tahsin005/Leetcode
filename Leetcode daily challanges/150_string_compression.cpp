@@ -42,3 +42,10 @@ int main() {
 
     return 0;
 }
+
+
+// resume ready
+// portfolio ready, whatsapp number add ..
+// problem solving (2 * easy * mid * hard)
+// 20 job apply
+// networking
