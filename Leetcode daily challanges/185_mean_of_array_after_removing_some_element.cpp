@@ -24,7 +24,6 @@ class Solution {
             return sum / cnt;
         }
 };
-
 int main() {
 
 
