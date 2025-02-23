@@ -15,12 +15,12 @@ public:
             cnt += (n & 1);
             n >>= 1;
         }
-
+        cout << "Nothing..." << endl;
         return cnt;
     }
 };
 int main(){
-
+    // they not like us...
 
     return 0;
 }
